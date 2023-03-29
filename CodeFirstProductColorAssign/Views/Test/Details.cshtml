@@ -1,0 +1,52 @@
+﻿@model CodeFirstProductColorAssign.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MfgName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MfgName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <ul>
+                @foreach (var temp in Model.ProductColors)
+                {
+                    <li>@temp.Color.ColorName </li>
+                }
+            </ul>
+        </dl>
+    </div>
+    
+</body>
+</html>
